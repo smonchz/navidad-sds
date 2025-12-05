@@ -213,10 +213,30 @@ function renderStrikes() {
   }
 }
 
+/* ------------------------------------------------------------
+   AUTOMATIC TOTAL SCORING
+   ------------------------------------------------------------ */
+function renderScore() {
+  const el = document.getElementById("totalScore");
+  if (!el) return;
+
+  const round = SURVEY[state.questionIndex];
+  let total = 0;
+
+  for (let i = 0; i < MAX_SLOTS; i++) {
+    if (state.revealed[i] && round.answers[i]) {
+      total += Number(round.answers[i].points || 0);
+    }
+  }
+
+  el.textContent = total;
+}
+
 function renderAll() {
   renderQuestion();
   renderAnswers();
   renderStrikes();
+  renderScore();  // <-- NEW
 
   if (IS_HOST) {
     const sel = document.getElementById("questionSelect");
@@ -236,6 +256,7 @@ function setRound(i) {
   state.questionIndex = i;
   state.revealed = Array(MAX_SLOTS).fill(false);
   state.strikes = 0;
+  renderScore(); // <-- NEW
   pushState();
 }
 
