@@ -1,0 +1,288 @@
+/* ===========================
+   ESTILOS GENERALES DHL
+   =========================== */
+:root {
+  --bg: #111;
+  --bg-card: #222;
+  --accent: #ffc400;
+  --accent-2: #d40511; /* DHL rojo */
+  --text-main: #fff;
+  --text-muted: #bbb;
+  --border-soft: #333;
+  --shadow-soft: 0 6px 18px rgba(0,0,0,0.4);
+
+  font-family: system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #222, #050505);
+  color: var(--text-main);
+  overflow-x: hidden;
+}
+
+/* ===========================
+   LAYOUT GENERAL
+   =========================== */
+.board-shell {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ===========================
+   HEADER / LOGO
+   =========================== */
+.board-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.logo span {
+  color: var(--accent-2);
+}
+
+.dhl-tag {
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--accent);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent);
+}
+
+/* ===========================
+   PREGUNTA
+   =========================== */
+.question-box {
+  background: linear-gradient(135deg, #272727, #151515);
+  border-radius: 18px;
+  padding: 20px;
+  min-height: 80px;
+  font-size: 26px;
+  display: flex;
+  align-items: center;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--border-soft);
+}
+
+/* ===========================
+   RESPUESTAS
+   =========================== */
+.answers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.answer-card {
+  position: relative;
+  background: var(--bg-card);
+  border-radius: 16px;
+  min-height: 70px;
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #333;
+  box-shadow: var(--shadow-soft);
+  text-align: center;
+  overflow: hidden;
+}
+
+.answer-hidden {
+  font-size: 18px;
+  letter-spacing: 2px;
+  opacity: 0.7;
+}
+
+.answer-revealed {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Preview solo visible en HOST */
+.host-preview {
+  position: absolute;
+  left: 8px;
+  bottom: 6px;
+  font-size: 10px;
+  opacity: 0.75;
+  pointer-events: none;
+  text-align: left;
+}
+
+.hide-preview .host-preview {
+  display: none !important;
+}
+
+/* ===========================
+   STRIKES
+   =========================== */
+.strikes {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.strike-dot {
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  border: 2px solid var(--accent-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  opacity: 0.3;
+}
+
+.strike-dot.active {
+  background: var(--accent-2);
+  opacity: 1;
+}
+
+/* ===========================
+   PANEL DEL HOST
+   =========================== */
+.host-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 340px;
+  height: 100vh;
+  padding: 20px;
+  border-left: 1px solid #222;
+  background: linear-gradient(180deg, #111, #050505);
+  overflow-y: auto;
+}
+
+.host-section-title {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  margin: 16px 0 8px;
+}
+
+.control-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.btn {
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 12px;
+  border: 1px solid var(--border-soft);
+  background: #1a1a1a;
+  color: var(--text-main);
+  cursor: pointer;
+}
+
+.btn-ghost {
+  background: transparent;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent), #ffdf4f);
+  color: #000;
+  border-color: #000;
+}
+
+select {
+  background: #000;
+  color: var(--text-main);
+  border-radius: 999px;
+  padding: 5px 10px;
+  border: 1px solid var(--border-soft);
+}
+
+/* ===========================
+   FAST MONEY PANEL
+   =========================== */
+.fm-panel {
+  border-radius: 12px;
+  border: 1px solid #333;
+  padding: 12px;
+  background: #111;
+}
+
+.fm-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.fm-row input {
+  border-radius: 8px;
+  border: 1px solid #444;
+  background: #050505;
+  color: #fff;
+  padding: 6px 8px;
+  font-size: 12px;
+}
+
+.fm-row input[type="number"] {
+  width: 70px;
+}
+
+/* ===========================
+   FAST MONEY OVERLAY EN BOARD
+   =========================== */
+.fm-board {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+.fm-board h2 {
+  font-size: 44px;
+  margin-bottom: 16px;
+}
+
+.fm-board ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.fm-board li {
+  font-size: 24px;
+  margin-bottom: 6px;
+}
+
+.fm-total {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+/* ===========================
+   BOARD MODE
+   =========================== */
+body:not(.host-view) .host-panel {
+  display: none;
+}
+
