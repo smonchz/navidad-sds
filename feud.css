@@ -114,6 +114,13 @@ body {
   font-size: 18px;
   font-weight: 600;
 }
+.total-score {
+  margin-top: 14px;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--accent);
+  text-shadow: 0 0 8px rgba(255, 196, 0, 0.4);
+}
 
 /* Preview solo visible en HOST */
 .host-preview {
