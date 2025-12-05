@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>100 SDs Dijeron - Pantalla</title>
+  <link rel="stylesheet" href="./feud.css" />
+  <script>window.IS_HOST=false;</script>
+</head>
+<body>
+  <main class="board-shell">
+    <header class="board-header">
+      <div class="logo"><span>100 SDs</span> Dijeron</div>
+      <div class="dhl-tag">Especial Navidad DHL</div>
+    </header>
+
+    <section>
+      <div class="question-box" id="questionText">Pregunta</div>
+      <div class="answers-grid" id="answersGrid"></div>
+      <div class="strikes" id="strikes"></div>
+    </section>
+  </main>
+
+  <div id="fm-board" class="fm-board">
+    <h2>FAST MONEY</h2>
+    <ul id="fm-list"></ul>
+    <div class="fm-total">Total: <span id="fm-total">0</span></div>
+  </div>
+
+  <script src="./game.js"></script>
+</body>
+</html>
