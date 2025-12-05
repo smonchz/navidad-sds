@@ -107,7 +107,9 @@ const MAX_SLOTS = 6;
 let state = {
   questionIndex: 0,
   revealed: Array(MAX_SLOTS).fill(false),
-  strikes: 0
+  strikes: 0,
+  teamA: 0,
+  teamB: 0
 };
 
 let IS_HOST = window.IS_HOST === true;
@@ -190,6 +192,7 @@ function renderAnswers() {
       card.style.cursor = "pointer";
       card.addEventListener("click", () => {
         state.revealed[i] = !state.revealed[i];
+        renderScore(); 
         pushState();
       });
     }
@@ -232,11 +235,26 @@ function renderScore() {
   el.textContent = total;
 }
 
+/* ------------------------------------------------------------
+   TEAM SCORING
+   ------------------------------------------------------------ */
+function renderTeams() {
+  const A = document.getElementById("teamA");
+  const B = document.getElementById("teamB");
+  if (!A || !B) return;
+  A.textContent = state.teamA;
+  B.textContent = state.teamB;
+}
+
+/* ------------------------------------------------------------
+   RENDER ALL
+   ------------------------------------------------------------ */
 function renderAll() {
   renderQuestion();
   renderAnswers();
   renderStrikes();
-  renderScore();  // <-- NEW
+  renderScore();
+  renderTeams();
 
   if (IS_HOST) {
     const sel = document.getElementById("questionSelect");
@@ -256,7 +274,7 @@ function setRound(i) {
   state.questionIndex = i;
   state.revealed = Array(MAX_SLOTS).fill(false);
   state.strikes = 0;
-  renderScore(); // <-- NEW
+  renderScore();
   pushState();
 }
 
@@ -314,7 +332,7 @@ function showFastMoney(rows) {
 }
 
 /* ------------------------------------------------------------
-   INICIALIZACIÓN (solo host)
+   INIT (solo host)
    ------------------------------------------------------------ */
 window.addEventListener("load", () => {
   renderAll();
@@ -366,5 +384,18 @@ window.addEventListener("load", () => {
     }
     broadcast({ type: "fastMoney", rows });
     showFastMoney(rows);
+  });
+
+  // TEAM SCORING BUTTONS
+  document.getElementById("awardA").addEventListener("click", () => {
+    const pts = Number(document.getElementById("totalScore").textContent);
+    state.teamA += pts;
+    pushState();
+  });
+
+  document.getElementById("awardB").addEventListener("click", () => {
+    const pts = Number(document.getElementById("totalScore").textContent);
+    state.teamB += pts;
+    pushState();
   });
 });
