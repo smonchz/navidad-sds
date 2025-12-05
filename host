@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>100 SDs Dijeron - Host</title>
+  <link rel="stylesheet" href="./feud.css" />
+  <script>window.IS_HOST=true;</script>
+</head>
+<body>
+
+  <main class="board-shell">
+    <header class="board-header">
+      <div class="logo"><span>100 SDs</span> Dijeron</div>
+      <div class="dhl-tag">Especial Navidad DHL</div>
+    </header>
+
+    <section>
+      <div class="question-box" id="questionText">Pregunta</div>
+      <div class="answers-grid" id="answersGrid"></div>
+      <div class="strikes" id="strikes"></div>
+    </section>
+  </main>
+
+  <aside class="host-panel">
+    <h3 class="host-section-title">Rondas</h3>
+    <div class="control-row">
+      <select id="questionSelect"></select>
+      <button class="btn btn-ghost" id="btn-prev">« Anterior</button>
+      <button class="btn btn-ghost" id="btn-next">Siguiente »</button>
+    </div>
+
+    <h3 class="host-section-title">Opciones Host</h3>
+    <button class="btn btn-ghost" id="toggle-preview">Mostrar/ocultar preview</button>
+
+    <h3 class="host-section-title">Strikes</h3>
+    <div class="control-row">
+      <button class="btn btn-ghost" id="btn-strike-add">+ Strike</button>
+      <button class="btn btn-ghost" id="btn-strike-clear">Limpiar</button>
+    </div>
+
+    <h3 class="host-section-title">Fast Money</h3>
+    <div class="control-row">
+      <button class="btn btn-primary" id="fm-show">Mostrar FM</button>
+      <button class="btn btn-ghost" id="fm-hide">Ocultar</button>
+    </div>
+
+    <div class="fm-panel" id="fm-panel" style="display:none;">
+      <p style="font-size:11px; color:#bbb;">Ingresa 5 respuestas con puntos:</p>
+
+      <div class="fm-row"><input id="fm-a1" placeholder="Resp 1"><input id="fm-p1" type="number" placeholder="Pts"></div>
+      <div class="fm-row"><input id="fm-a2" placeholder="Resp 2"><input id="fm-p2" type="number" placeholder="Pts"></div>
+      <div class="fm-row"><input id="fm-a3" placeholder="Resp 3"><input id="fm-p3" type="number" placeholder="Pts"></div>
+      <div class="fm-row"><input id="fm-a4" placeholder="Resp 4"><input id="fm-p4" type="number" placeholder="Pts"></div>
+      <div class="fm-row"><input id="fm-a5" placeholder="Resp 5"><input id="fm-p5" type="number" placeholder="Pts"></div>
+
+      <button class="btn btn-primary" id="fm-send">Enviar a pantalla</button>
+    </div>
+  </aside>
+
+  <script src="./game.js"></script>
+</body>
+</html>
