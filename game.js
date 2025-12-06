@@ -39,84 +39,84 @@ function playSound(name) {
    ------------------------------------------------------------ */
 const SURVEY = [
   {
-    question: "Algo que pasa en las fiestas navideñas del trabajo",
+    question: "Algo que la gente hace cuando nadie la ve",
     answers: [
-      { text: "Intercambio de regalos", points: 38 },
-      { text: "Juegos dinámicos", points: 22 },
-      { text: "Comida especial", points: 18 },
-      { text: "Fotos del equipo", points: 10 },
-      { text: "Rifa de premios", points: 8 },
-      { text: "Brindis navideño", points: 4 }
+      { text: "Cantar fuerte", points: 29 },
+      { text: "Bailar raro", points: 25 },
+      { text: "Hablar sola", points: 18 },
+      { text: "Revisar el refri sin  razón", points: 12 },
+      { text: "Practicar caras en el espejo", points: 10 },
+      { text: "Oler su ropa", points: 6 }
     ]
   },
   {
-    question: "Comida típica de una cena navideña",
+    question: "Excusas para no contestar un mensaje",
     answers: [
-      { text: "Pavo", points: 34 },
-      { text: "Lomo", points: 22 },
-      { text: "Ensalada", points: 18 },
-      { text: "Puré de papa", points: 12 },
-      { text: "Ponche", points: 8 },
-      { text: "Pasta", points: 6 }
+      { text: "No lo vi", points: 32 },
+      { text: "Me quedé sin batería", points: 26 },
+      { text: "Estaba ocupado", points: 18 },
+      { text: "Me quedé dormido", points: 12 },
+      { text: "No tenía señal", points: 7 },
+      { text: "Seme olvidó", points: 5 }
     ]
   },
   {
-    question: "Algo que la gente trae a la posada",
+    question: "Algo que hacen los perros y da risa",
     answers: [
-      { text: "Regalo", points: 28 },
-      { text: "Comida", points: 26 },
-      { text: "Bebidas", points: 20 },
-      { text: "Postres", points: 12 },
-      { text: "Decoración", points: 8 },
-      { text: "Ropa navideña", points: 6 }
+      { text: "Perseguir su cola", points: 30 },
+      { text: "Dormir en posiciones raras", points: 24 },
+      { text: "Zoomies", points: 18 },
+      { text: "Hacer ruidos raros", points: 12 },
+      { text: "Lamerse", points: 10 },
+      { text: "Pedir comida", points: 6 }
     ]
   },
   {
-    question: "Algo que pasa cuando se arma el intercambio",
+    question: "Algo que da pena que te cachen haciendo",
     answers: [
-      { text: "Se equivocan de regalo", points: 30 },
-      { text: "Se tardan en encontrar al destinatario", points: 24 },
-      { text: "Regalo repetido", points: 18 },
-      { text: "Regalo chistoso", points: 14 },
-      { text: "Alguien se enoja", points: 8 },
-      { text: "Falta alguien", points: 6 }
+      { text: "Stalkeando a tu ex", points: 33 },
+      { text: "Hablando solo", points: 25 },
+      { text: "Bailando", points: 16 },
+      { text: "Comiendo a escondidas", points: 12 },
+      { text: "Tomando selfies", points: 8 },
+      { text: "Viendo memes", points: 6 }
     ]
   },
   {
-    question: "Algo que siempre pasa al final de la posada",
+    question: "Algo que no sabes saber auqnue eres adulto",
     answers: [
-      { text: "Agradecimientos", points: 30 },
-      { text: "Despedidas largas", points: 24 },
-      { text: "Fotos finales", points: 18 },
-      { text: "Recuento de regalos", points: 14 },
-      { text: "Buscar transporte", points: 8 },
-      { text: "Recoger cosas", points: 6 }
+      { text: "Matemáticas", points: 28 },
+      { text: "Lavar bien la ropa", points: 24 },
+      { text: "Ahorrar", points: 18 },
+      { text: "Dormirse temprano", points: 12 },
+      { text: "Cocinar sin quemarte", points: 10 },
+      { text: "El SAT", points: 8 }
     ]
   },
   {
-    question: "Algo que todos esperan en la cena navideña",
+    question: "Algo que dice un diseñador cuándo le piden algo de último momento",
     answers: [
-      { text: "La comida principal", points: 36 },
-      { text: "Premios / rifas", points: 28 },
-      { text: "Postres", points: 16 },
-      { text: "Música y baile", points: 10 },
-      { text: "Tiempo libre", points: 6 },
-      { text: "Fotos del equipo", points: 4 }
+      { text: "¿Para cuándo era?", points: 34 },
+      { text: "Estoy en eso?", points: 26 },
+      { text: "Déjame ver", points: 17 },
+      { text: "Ahorita te lo mando", points: 11 },
+      { text: "No me llegó el correo", points: 7 },
+      { text: "¿Quién autorizó esto?", points: 5 }
     ]
   },
   {
-    question: "Algo que sucede antes de iniciar la cena navideña",
+    question: "Excusas para evitar una junta",
     answers: [
-      { text: "Acomodarse en mesas", points: 34 },
-      { text: "Tomarse fotos", points: 22 },
-      { text: "Servirse bebidas", points: 18 },
-      { text: "Buscar asiento", points: 12 },
-      { text: "Saludar al equipo", points: 8 },
-      { text: "Esperar a los demás", points: 6 }
+      { text: "Tengo otra reunión", points: 33 },
+      { text: "No me llegó la invitación", points: 25 },
+      { text: "Mi compu se trabó", points: 17 },
+      { text: "Estoy en llamada", points: 12 },
+      { text: "Voy al baño", points: 8 },
+      { text: "Ahorita regreso", points: 5 }
     ]
   },
   {
-    question: "Actividad típica en un festejo empresarial navideño",
+    question: "Actividad típica en un festejo navideño del trabajo",
     answers: [
       { text: "Rifas", points: 32 },
       { text: "Juegos", points: 26 },
